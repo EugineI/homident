@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="{% static 'gem.jpg' %}">
+    <title>Homident</title>
+    {% block content %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:powderblue;
+            max-width: 80%;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            margin: 50px auto;
+            max-width: 80%;
+            background-color:palegoldenrod;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        } 
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+   
+    <form method="post">
+        {% csrf_token %}
+        <h1>Login</h1>
+        <div>
+            <label for="id_username">Username:</label>
+            <input type="text" name="username" placeholder="Enter username">
+        </div>
+        <div>
+            <label for="id_password">Password:</label>
+           <input type="password" name="password" placeholder="Enter password">
+        </div>
+        <button type="submit">Login</button>
+    </form>
+    {% endblock %}
+</body>
+</html>

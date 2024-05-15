@@ -1,0 +1,59 @@
+{% extends 'BigSmiles/base.html' %} 
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+         font-family: Arial, sans-serif;
+         }
+         .container {
+            max-width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color:#806f6f;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+         }
+         button {
+             background-color: #007bff;
+             color: #fff;
+             border: none;
+             padding: 5px 10px;
+             border-radius: 5px;
+             cursor: pointer;
+         }
+         button:active{
+             background-color:aqua
+         }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tooth Replacement</h1>
+        <img class="imag" src="{% static 'before.jpg' %}" width= "40%" alt="Example Image">
+        <img class="imag" src="{% static 'after.jpg' %}" width= "40%" alt="Example Image">
+        <h1>Tooth gem</h1>
+        <img class="image" src="{% static 'gem.jpg' %}" width= "40%" alt="Example Image">
+        <img class="imag" src="{% static 'gem (2).jpg' %}" width= "40%" alt="Example Image">
+        <h1>Tooth Masking</h1>
+        <img class="img" src="{% static 'Masking b.jpg' %}" width= "40%" alt="Example Image">
+        <img class="image" src="{% static 'Masking AF.jpg' %}" width= "40%" alt="Example Image">
+        <h1>Mouth Scaling</h1>
+        <img class="imag" src="{% static 'fullmouth scaling.jpg' %}" width= "40%" alt="Example Image">
+        <img class="imag" src="{% static 'after scaling.jpg' %}" width= "40%" alt="Example Image"> 
+        <H1>Tooth Screening</H1>
+        <img class="imag" src="{% static 'Screening.jpg' %}" width= "40%" alt="Example Image">
+        <img class="img" src="{% static 'Screening2.jpg' %}" width= "40%" alt="Example Image">
+        <h1>Oral Education</h1>
+        <p>We give oral Education to the community for an orally healthy community</p>
+        <img class="img" src="{% static 'oral edu.jpg' %}" width= "40%" alt="Example Image">
+       
+   </div>
+</body>
+</html>
+{% endblock %}

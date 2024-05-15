@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="{% static 'gem.jpg' %}">
+    <title>Homident</title>
+    {% block content %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:powderblue;
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            max-width: 60%;
+            margin: 50px auto;
+            padding: 20px; 
+            max-width: 80%;
+            background-color:palegoldenrod;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <form method="post">
+        {% csrf_token %}
+        <h1>Register</h1>
+        <div>
+            <label for="id_username">Username:</label>
+            {{ form.username }}
+            {% if form.username.errors %}
+                <p class="error-message">{{ form.username.errors }}</p>
+            {% endif %}
+        </div>
+        <div>
+            <label for="id_password1">Password:</label>
+            {{ form.password1 }}
+            {% if form.password1.errors %}
+                <p class="error-message">{{ form.password1.errors }}</p>
+            {% endif %}
+        </div>
+        <div>
+            <label for="id_password2">Password confirmation:</label>
+            {{ form.password2 }}
+        </div>
+        <button type="submit">Register</button>
+    </form>
+    {% endblock %}
+</body>
+</html>
