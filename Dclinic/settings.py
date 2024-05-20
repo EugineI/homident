@@ -1,4 +1,3 @@
-import os
 """
 Django settings for Dclinic project.
 
@@ -12,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-yn+b@eh64xrj7=t_&2$me+y@-+zd5j@n%4@t%8p)f(@w6wi8@*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['homident-2rho5iott-homedents-projects.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app', '.new.sh', '127.0.0.1', 'localhost']
+
 
 
 
