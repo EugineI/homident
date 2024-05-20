@@ -1,15 +1,11 @@
-#!/bin/bash
+#!/bin/bash#!/bin/bash
 
-# Create a virtual environment
-python -m venv venv
-source venv/bin/activate
+# Ensure pip is installed and upgrade it
+pip install --upgrade pip
 
-# Ensure pip is available and upgrade it
-venv/bin/pip install --upgrade pip
-
-# Install dependencies
-venv/bin/pip install -r requirements.txt
+# Install dependencies globally
+pip install -r requirements.txt
 
 # Django specific commands
-venv/bin/python manage.py collectstatic --noinput
-venv/bin/python manage.py migrate
+python manage.py collectstatic --noinput
+python manage.py migrate
