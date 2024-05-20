@@ -1,13 +1,15 @@
-pip install -r requirements.txt
-python3.12 manage.py collectstatic
-if ! command -v python3 &> /dev/null
-then
-    echo "Python3 could not be found. Please ensure Python3 is installed."
-    exit 1
-fi
+#!/bin/bash
 
-if ! command -v pip &> /dev/null
-then
-    echo "pip could not be found, installing pip..."
-    apt-get update && apt-get install -y python3-pip
-fi
+# Use the Python installed in the Vercel environment
+python3 -m venv venv
+source venv/bin/activate
+
+# Upgrade pip to the latest version
+pip install --upgrade pip
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Django specific commands
+python manage.py collectstatic --noinput
+python manage.py migrate
