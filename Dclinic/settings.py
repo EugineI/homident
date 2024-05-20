@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-yn+b@eh64xrj7=t_&2$me+y@-+zd5j@n%4@t%8p)f(@w6wi8@*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['homident-7xnix2hkt-homedents-projects.vercel.app']
+ALLOWED_HOSTS = ['homident-2rho5iott-homedents-projects.vercel.app']
 
 
 
