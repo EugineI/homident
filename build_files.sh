@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Create a virtual environment
-python3 -m venv venv
+python -m venv venv
 source venv/bin/activate
 
-# Upgrade pip to the latest version
+# Ensure pip is available and upgrade it
 venv/bin/pip install --upgrade pip
 
 # Install dependencies
